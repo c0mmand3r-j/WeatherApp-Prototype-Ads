@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>IBM Watson Advertising</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="screen"/>
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/actions.js"></script>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="content">
+
+      <div class="device_float">
+        <img class="device" src="images/device_frame.png" />
+      </div>
+
+      <img class="ui" src="images/ui_lg-cloudy_night.png" />
+
+      <video muted class="animated_bb" autoplay="autoplay" onclick="this.paused ? this.play() : this.pause();">
+
+        <!-- path to your video -->
+        <source src="videos/414x240-video_04.mp4" type="video/mp4">
+        <!-- ////////////////// -->
+
+        <p>Sorry, your browser doesn't support HTML5 video.</p>
+      </video>
+
+      <p class="instructions">Tap image to start / stop animation.</p>
+
+      <nav class="slide_nav">
+
+        <!-- path to previous slide -->
+        <a class="prev" id="left-arrow" href="slide_03.html"><img src="images/prev.png" /></a>
+        <!-- ////////////////////// -->
+
+        <!-- name of current slide -->
+        <h1 class="slide_title">Cloudy Night</h1>
+        <!-- ///////////////////// -->
+
+        <!-- path to next slide -->
+        <a class="next" id="right-arrow" href="slide_05.html"><img src="images/next.png" /></a>
+        <!-- ////////////////// -->
+
+      </nav>
+
+      <img class="wa_logo" src="images/ibm_wa-logo_stacked.png" />
+      <img class="wa_logo-horiz" src="images/ibm_wa-logo_horiz.png" />
+
+      <!-- DO NOT EDIT: js will auto-populate with content in "info" folder -->
+      <p class="client_name"></p>
+      <p class="product_name"></p>
+      <!-- ////////////////////////// -->
+
+    </div>
+
+    <div class="device_error"><p>Mobile App Integrated Marquees will not serve on devices this small.</p></div>
+
+  </div>
+
+</body>
+
+</html>

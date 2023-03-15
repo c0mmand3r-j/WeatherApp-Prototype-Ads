@@ -1,0 +1,262 @@
+/* IBM Plex Fonts for Preview Form */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 450;
+  src: local("IBM Plex Sans Text"), local("IBMPlexSans-Text"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-Text.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: local("IBM Plex Sans SemiBold"), local("IBMPlexSans-SemiBold"), url("../IBM-Plex-Sans/fonts/complete/woff/IBMPlexSans-SemiBold.woff") format("woff");
+}
+/* Size key:
+    sm = 375x667 = iPhone 6/6s/7/8 - aka - rg = regular
+    md = 414x736 = iPhone Plus
+    lg = 375x812 = iPhone X/Xs
+    xl = 414x896 = iPhone Xr/Xs-Max
+*/
+
+/* Preview Form Structure & Styling */
+  body {margin: 0;background: #f2f6fa;}
+  hr{border-bottom: 1px solid #15252f;}
+
+  #previewMainContainer{
+    opacity: 0;
+    transition: opacity .25s ease-out;
+  }
+  #previewMainContainer.preview{display: block;width:800px;margin: 0 auto;opacity: 1;}
+  /* Responsive adjustments for widths less than form layout */
+  #previewAltContainer{display: none;}
+  @media screen and (max-width: 799px) {
+    #previewMainContainer.preview{display: none;}
+    #previewAltContainer.preview{
+      display: block;
+      width: 100%;
+      padding: 1.25em;
+      color:#ed6827;
+    	font-family: 'IBM Plex Sans SemiBold';
+    	font-size: 14px;
+    	line-height: 24px;
+      text-align: center;
+    }
+    #previewAltContainer p{
+      border-top: 2px solid #15252f;
+      width: 50%;
+      margin: 10px auto;
+      padding: 10px 0;
+    }
+    #previewAltContainer img{
+      min-width: 200px;
+      width: 50%;
+      margin: 10px auto;
+    }
+  }
+
+  #previewColLeft{
+    width: 245px;
+    float: left;
+    margin: 60px 42px 12px 12px;
+  	color:#15252f;
+  	font-family: 'IBM Plex Sans SemiBold';
+  	font-size: 14px;
+  	line-height: 24px;
+  }
+  #previewFormLogo{width: auto; height: 58px;margin: 20px 0 10px;}
+  /* Dynamic Client Name */
+  #previewFormClientName{margin: 14px 0;}
+  /* Radio Buttons for Device Size */
+  #previewFormDeviceSize{margin: 14px 0;}
+  #deviceLarge{margin-left: 0;}
+  #deviceSmall{margin-left: 23px;}
+  /* Condition Select Menu */
+  #previewFormCondition{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+  }
+  #btnPrevCond{width: 50%;cursor: pointer;text-align: left;position: absolute;}
+  #btnNextCond{width: 50%;cursor: pointer;text-align: right;position: absolute;right: 0;}
+  #txtCondName{width: 215px;text-align: center;margin: 0 auto;}
+  #previewFormConditionIndex{
+    width: 100%;
+    color:#171717;
+  	font-family: 'IBM Plex Sans';
+  	font-size: 12px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: .32px;
+  	line-height: 16px;
+    text-align: center;
+  }
+
+  #previewColRight{
+    width: 470px;
+    float: left;
+    margin: 40px 0 0;
+    position: relative;
+    height: 840px;
+  }
+
+/* Preview Ad Container & BG Containers  */
+	  #previewAdContainer {
+    position: absolute;
+    width: 320px;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 96px;
+  }
+  #previewAdContainer.xl {height: 320px; bottom: 235px;}
+  #previewAdContainer.lg {height: 320px; bottom: 235px;}
+  #previewAdContainer.md {height: 320px; bottom: 235px;}
+  #previewAdContainer.sm {height: 320px; bottom: 100px;}
+  #previewAdContainer.xl.layout {height: 320px; top: 663px;}
+  #previewAdContainer.lg.layout {height: 320px; top: 579px;}
+  #previewAdContainer.md.layout {height: 320px; top: 537px;}
+  #previewAdContainer.sm.layout {height: 260px; bottom: 232px;}
+
+  #previewBg {
+    width: 400px;
+    position: absolute;
+    z-index: 0;
+    left: 49%;
+    transform: translateX(-50%);
+  }
+  #previewBg.xl {height: 760px; bottom: 227px; clip:rect(195px, 400px, 760px, 10px);}
+  #previewBg.lg {height: 760px; bottom: 227px; clip:rect(195px, 400px, 760px, 10px);}
+  #previewBg.md {height: 760px; bottom: 227px; clip:rect(195px, 400px, 760px, 10px);}
+  #previewBg.sm {height: 510px; bottom: 148px;}
+  #previewBg.xl.layout {height: 240px; bottom: 27px;}
+  #previewBg.lg.layout {height: 240px; bottom: 111px;}
+  #previewBg.md.layout {height: 240px; bottom: 153px;}
+  #previewBg.sm.layout {height: 200px; bottom: 222px;}
+
+/* Preview App Overlay = with images for device and ui */
+#previewDeviceOverlay {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#previewDeviceOverlay.lg {
+  width: 470px;
+  height: 870px;
+  background-size: cover;
+}
+#previewDeviceOverlay.sm {
+  width: 433px;
+  height: 940px;
+  background-size: cover;
+}
+#previewDeviceToggleBtn {position: absolute; z-index: 5; width: 100%; height: 100px;}
+
+#previewUiOverlay {position: absolute; z-index: 2;}
+#previewUiOverlay.lg{width: 375px;height: 807px; top: 25px;left: 50%;transform: translateX(-50%); background-position: center;background-repeat: no-repeat;background-size: cover;}
+#previewUiOverlay.sm{width: 375px;height: 736px; top: 108px;left: 50%;transform: translateX(-50%); background-position: center;background-repeat: no-repeat;background-size: cover;}
+
+/* Preview App Layout = with colored divs representing different regions */
+#previewAppLayout {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#previewAppLayout.xl {width: 414px; height: 896px;}
+#previewAppLayout.lg {width: 375px; height: 812px;}
+#previewAppLayout.md {width: 414px; height: 736px;}
+#previewAppLayout.sm {width: 375px; height: 667px;}
+
+#previewAppHeader {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background: rgb(97, 158, 184);
+}
+#previewAppHeader.xl {height: 233px;}
+#previewAppHeader.lg {height: 211px;}
+#previewAppHeader.md {height: 191px;}
+#previewAppHeader.sm {height: 173px;}
+
+#previewAppToggle {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  z-index: 1;
+  background: rgb(157, 179, 187);
+}
+#previewAppToggle.xl {top: 233px;}
+#previewAppToggle.lg {top: 211px;}
+#previewAppToggle.md {top: 191px;}
+#previewAppToggle.sm {top: 173px;}
+
+#previewAppChart {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background: rgb(184, 143, 96);
+}
+#previewAppChart.xl {height: 280px; top: 293px;}
+#previewAppChart.lg {height: 218px; top: 271px;}
+#previewAppChart.md {height: 196px; top: 251px;}
+#previewAppChart.sm {height: 180px; top: 233px;}
+
+#previewAppInsight {
+  width: 90%;
+  height:80px;
+  position: absolute;
+  z-index: 3;
+  background: rgb(198, 189, 113);
+  left: 50%;
+  transform: translateX(-50%);
+}
+#previewAppInsight.xl {top: 573px;}
+#previewAppInsight.lg {top: 489px;}
+#previewAppInsight.md {top: 447px;}
+#previewAppInsight.sm {top: 413px;}
+
+#previewAppGradient {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 50%,rgba(255,255,255,0) 100%);
+}
+#previewAppGradient.xl {top: 573px;}
+#previewAppGradient.lg {top: 489px;}
+#previewAppGradient.md {top: 447px;}
+#previewAppGradient.sm {top: 413px;}
+
+#previewAppNav {
+  width: 100%;
+  height: 49px;
+  position: absolute;
+  z-index: 1;
+  background: rgb(134, 134, 133);
+}
+#previewAppNav.xl {top: 813px;}
+#previewAppNav.lg {top: 729px;}
+#previewAppNav.md {top: 687px;}
+#previewAppNav.sm {top: 618px;}
+
+#previewAppCoverLeft, #previewAppCoverRight {
+  position: absolute;
+  z-index: 3;
+  background: #f2f6fa;
+}
+#previewAppCoverLeft.xl, #previewAppCoverRight.xl {display: none;}
+#previewAppCoverLeft.md, #previewAppCoverRight.md {display: none;}
+#previewAppCoverLeft.lg, #previewAppCoverLeft.sm {
+  width: 20px;
+  height: 812px;
+  left: -20px;
+}
+#previewAppCoverRight.lg, #previewAppCoverRight.sm {
+  width: 20px;
+  right: -20px;
+  height: 812px;
+}
